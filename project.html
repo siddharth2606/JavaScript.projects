@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color changer App</title>
+    <style>
+        body{
+    text-align: center;
+    margin: 0%;
+    padding: 0%;
+}
+h1{
+    color: rgb(221, 242, 31);
+    background-color: rgb(55, 45, 197);
+}
+button{
+    padding:10px;
+    font-size:1rem ;
+    color: aliceblue;
+    background-color: blueviolet;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+    </style>
+</head>
+<body>
+    <h1>Color Changer App</h1>
+    <button id="colorchangebtn">change background color</button>
+    <p id="colorCode">The color is: rgb(255, 255, 255)</p>
+
+    <br>
+    <br>
+    <script>
+        const button = document.getElementById("colorchangebtn");
+const ColorCodeText =document.getElementById("colorcode");
+function getRemdomColor(){
+    const r = Math.floor(Math.random() *256);
+    const g = Math.floor(Math.random() *256);
+    const b = Math.floor(Math.random() *256);
+    return ` rgb(${r}, ${g}, ${b})`;
+}
+button.addEventListener("click", () => {
+    const newColor= getRemdomColor(); 
+    document.body.style.backgroundColor = newColor;
+    ColorCodeText.textContent = `the color is : $(newcolor)`;
+})
+    </script>
+</body>
+</html>
